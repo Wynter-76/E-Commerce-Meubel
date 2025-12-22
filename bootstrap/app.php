@@ -12,6 +12,15 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         //
+        $middleware->group('admin', [
+            \Illuminate\Auth\Middleware\Authenticate::class,
+            \App\Http\Middleware\admin::class,
+        ]);
+
+        $middleware->group('customer', [
+            \Illuminate\Auth\Middleware\Authenticate::class,
+            \App\Http\Middleware\customer::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
