@@ -41,7 +41,7 @@
 							@csrf
 							<button type="submit" class="btn p-0 border-0 bg-transparent">
 								<span class="icon-cross">
-									<img src="{{ asset('storage/images/cross.svg') }}"
+									<img src="{{ asset('template_customer/images/cross.svg') }}"
 										class="img-fluid">
 								</span>
 							</button>

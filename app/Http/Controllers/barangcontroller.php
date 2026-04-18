@@ -42,9 +42,12 @@ class barangcontroller extends Controller
         $data->bahan = $request->bahan;
         $data->ukuran = $request->ukuran;
         $data->stok = $request->stok;
+
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
-            $namaFile = time().'.'.$file->getClientOriginalExtension();
+            // Mengambil nama asli file
+            $namaFile = $file->getClientOriginalName(); 
+            // Simpan ke folder 'barang' di disk 'public' dengan nama asli
             $file->storeAs('barang', $namaFile, 'public');
             $data->gambar = 'barang/'.$namaFile;
         }

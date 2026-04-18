@@ -50,7 +50,7 @@
                                 @endauth
 							</a>
 						</li>
-						<li><a class="nav-link" href="{{route ('customer.checkout')}}"><img src="{{ asset('storage/images/cart.svg')}}"></a></li>
+						<li><a class="nav-link" href="{{route ('customer.checkout')}}"><img src="{{ asset('template_customer/images/cart.svg')}}"></a></li>
 					</ul>
 				</div>
 			</div>

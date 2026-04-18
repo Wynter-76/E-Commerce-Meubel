@@ -10,9 +10,9 @@ use App\Http\Middleware\admin;
 use App\Http\Middleware\customer;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware('auth')->get('/redirect-role', function () {
     return auth()->user()->role === 'admin'
@@ -22,7 +22,7 @@ Route::middleware('auth')->get('/redirect-role', function () {
 
 
 
-Route::get('/home', [barangcontroller::class, 'home'])->name('customer.index');
+Route::get('/', [barangcontroller::class, 'home'])->name('customer.index');
 
 
 // Route::get('/', [customercontroller::class, 'index'])->name('home');
@@ -30,11 +30,11 @@ Route::get('/home', [barangcontroller::class, 'home'])->name('customer.index');
 // Route::get('/about', [customercontroller::class, 'about'])->name('customer.about');
 // Route::get('/contact', [customercontroller::class, 'contact'])->name('customer.contact');
 
+Route::get('/about', [barangcontroller::class, 'about'])->name('customer.about'); 
+Route::get('/shop', [barangcontroller::class, 'shop'])->name('customer.shop'); 
+Route::get('/contact', [barangcontroller::class, 'contact'])->name('customer.contact'); 
 Route::middleware(['auth','customer'])->group(function () {
      
-    Route::get('/shop', [barangcontroller::class, 'shop'])->name('customer.shop'); 
-    Route::get('/about', [barangcontroller::class, 'about'])->name('customer.about'); 
-    Route::get('/contact', [barangcontroller::class, 'contact'])->name('customer.contact'); 
 
     Route::get('/checkout', [pesanancontroller::class, 'checkout'])
     ->name('customer.checkout');

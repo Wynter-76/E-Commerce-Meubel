@@ -10,7 +10,7 @@
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
 								<h1>About Us</h1>
-								<p class="mb-4">Kami bertiga, dua dari Kandat satu dari Gampengrejo</p>
+								<p class="mb-4">Kami berempat, satu kandat, satu gampengrejo, satu jakarta pusat, dan yang terakhir tulungagung.</p>
 								<p><a href="{{ route('customer.shop')}}" class="btn btn-secondary me-2">Shop Now</a></p>
 							</div>
 						</div>
@@ -88,36 +88,45 @@
 
 				<div class="row">
 
+				
+					<!-- Start Column 2 -->
+					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+						<img src="{{asset('template_customer/images/person_3.jpg')}}" class="img-fluid mb-5">
+
+						<h3 clas><a href="#"><span>Arya </span> <span> Farrel </span>Aptanta</a></h3>
+            <span class="d-block position mb-4">Ketua Kelompok</span>
+            <p>Tinggal di Desa Wanengpaten.
+            Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					</div> 
+					<!-- End Column 2 -->
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-						<img src="{{asset('template_customer/images/WhatsApp Image 2025-12-15 at 07.23.11.jpeg')}}" class="img-fluid mb-5">
-						<h3 clas><a href="#"><span>M.Azril</span> Mustofa</a></h3>
-            <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+						<img src="{{asset('template_customer/images/person_3.jpg')}}" class="img-fluid mb-5">
+						<h3 clas><a href="#"><span>M. Azril</span> Mustofa</a></h3>
+            <span class="d-block position mb-4">Anggota Kelompok</span>
             <p>Tinggal di Desa Pule.
             Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                     </div>
 					<!-- End Column 1 -->
-
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-						<img src="{{asset('template_customer/images/WhatsApp Image 2025-12-15 at 07.23.11.jpeg')}}" class="img-fluid mb-5">
-
-						<h3 clas><a href="#"><span>Arya </span> <span> Farrel </span>Aptanta</a></h3>
-            <span class="d-block position mb-4">CEO Byon Combat, Founder, Atty.</span>
-            <p>Separated they live in.
-            Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-					</div> 
-					<!-- End Column 2 -->
-
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-						<img src="{{asset('template_customer/images/WhatsApp Image 2025-12-15 at 07.23.11.jpeg')}}" class="img-fluid mb-5">
-						<h3 clas><a href="#"><span>Muh.</span>Muafan</span>Al-Farisi</a></h3>
-            <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-            <p>Separated they live in.
+						<img src="{{asset('template_customer/images/person_3.jpg')}}" class="img-fluid mb-5">
+						<h3 clas><a href="#"><span>Daffa</span> Putra</span> Prasetya</a></h3>
+            <span class="d-block position mb-4">Anggota Kelompok</span>
+            <p>Tinggal di kelurahan Tanah Tinggi.
             Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 					</div> 
-					<!-- End Column 3 -->		
+					<!-- End Column 3 -->	
+
+					<!-- Start Column 4 -->
+					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+						<img src="{{asset('template_customer/images/person_3.jpg')}}" class="img-fluid mb-5">
+						<h3 clas><a href="#"><span>Naufal</span> Athaya</span> Khansa</a></h3>
+            <span class="d-block position mb-4">Anggota Kelompok</span>
+            <p>Tinggal di desa Karanganom
+            Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					</div> 
+					<!-- End Column 4 -->	
 				</div>
 			</div>
 		</div>
