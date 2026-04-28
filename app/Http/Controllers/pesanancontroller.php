@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\barang;
 use App\Models\pesanan;
 use App\Models\detail_pesanan;
+
 use Illuminate\Support\Facades\Auth;
 
 class pesanancontroller extends Controller
@@ -108,6 +109,45 @@ class pesanancontroller extends Controller
         return redirect()->route('customer.checkout')
             ->with('success', 'Berhasil masuk keranjang');
     }
+
+    public function tambah($id)
+    {
+        $item = detail_pesanan::findOrFail($id);
+
+        $item->jumlah += 1;
+        $item->jumlah_harga = $item->jumlah * $item->barang->harga;
+        $item->save();
+
+        // update total keranjang
+        $keranjang = $item->pesanan;
+        $keranjang->jumlah_harga = $keranjang->detail->sum('jumlah_harga');
+        $keranjang->save();
+
+        return back()->with('success', 'Jumlah ditambah');
+    }
+
+    public function kurang($id)
+    {
+        $item = detail_pesanan::findOrFail($id);
+
+        if ($item->jumlah > 1) {
+            $item->jumlah -= 1;
+            $item->jumlah_harga = $item->jumlah * $item->barang->harga;
+            $item->save();
+        } else {
+            // kalau jumlah 1, langsung hapus
+            $item->delete();
+        }
+
+        // update total keranjang
+        $keranjang = $item->pesanan;
+        $keranjang->jumlah_harga = $keranjang->detail->sum('jumlah_harga');
+        $keranjang->save();
+
+        return back()->with('success', 'Jumlah dikurangi');
+    }
+
+
 
     // ===============================
     // HALAMAN KERANJANG

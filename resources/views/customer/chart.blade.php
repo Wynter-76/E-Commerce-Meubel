@@ -33,7 +33,26 @@
             <tr>
                 <td>{{ $item->barang->nama_barang }}</td>
                 <td>Rp {{ number_format($item->barang->harga, 0, ',', '.') }}</td>
-                <td>{{ $item->jumlah }}</td>
+                <td>
+                    <div class="d-flex align-items-center gap-2">
+
+                        <!-- Tombol Kurang -->
+                        <form action="{{ route('checkout.kurang', $item->id) }}" method="POST">
+                            @csrf
+                            <button class="btn btn-warning btn-sm">-</button>
+                        </form>
+
+                        <!-- Jumlah -->
+                        <span>{{ $item->jumlah }}</span>
+
+                        <!-- Tombol Tambah -->
+                        <form action="{{ route('checkout.tambah', $item->id) }}" method="POST">
+                            @csrf
+                            <button class="btn btn-primary btn-sm">+</button>
+                        </form>
+
+                    </div>
+                </td>
                 <td>Rp {{ number_format($item->jumlah_harga, 0, ',', '.') }}</td>
                 <td>
                     <form action="{{ route('checkout.hapus', $item->id) }}" method="POST"
