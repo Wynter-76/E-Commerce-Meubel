@@ -715,3 +715,118 @@ textarea {
     object-fit: cover; /* biar gak gepeng & tetap proporsional */
     border-radius: 10px; /* opsional biar lebih bagus */
 }
+
+/* Menghilangkan background biru autofill Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+/* ===== IMAGE SLIDER ===== */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 700px; /* Sesuaikan tinggi sesuai kebutuhan */
+}
+
+.slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Tombol prev & next */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    border: none;
+    padding: 14px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.slider-btn.prev { left: 16px; }
+.slider-btn.next { right: 16px; }
+
+/* Dots indikator */
+.slider-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 250px;
+    }
+    .slider-btn {
+        padding: 10px 13px;
+        font-size: 14px;
+    }
+}
+
+.section-divider {
+    width: 100vw;
+    background-color: #3b5d50;
+    height: 100px;
+    padding: 18px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    text-transform: uppercase;
+    margin-left: calc(-50vw + 50%); /* trick full width dari dalam container */
+    margin-bottom: 30px;
+}
+
+.section-divider h2 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1px;
+}

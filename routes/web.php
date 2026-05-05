@@ -8,12 +8,10 @@ use App\Http\Controllers\pesanancontroller;
 use App\Models\barang;
 use App\Http\Middleware\admin;
 use App\Http\Middleware\customer;
+use App\Http\Controllers\ProfileController;
 
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+// Ganti Route::post menjadi Route::put
+Route::put('/reset-password', [App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('password.update');
 Route::middleware('auth')->get('/redirect-role', function () {
     return auth()->user()->role === 'admin'
         ? redirect()->route('barang.index')
